@@ -15,22 +15,21 @@ public class CashRegister {
 
 		double change = tender - price;
 		if (change == 0.0) {
-			System.out.println("No change.");
+			System.out.println("Exact amount tendered. No change needed!");
 		}
 		if (change < 0.0) {
 			System.out.println("Invalid amount tendered. Check again and/or ask for more money!");
 		}
 		if (change > 0.01) {
-			System.out.println("Please give following change to customer:");
+			System.out.println("Please give the following change to customer:");
 		}
 		if (change >= 10) {
-			double ten = change/10;
-			System.out.println((int)(ten) + " ten dollar bill(s)");
-			change = change - (int)ten * 10;
-		
+			double ten = change / 10;
+			System.out.println((int) (ten) + " ten dollar bill(s)");
+			change = change - (int) ten * 10;
 		}
 		if (change >= 5) {
-			double five = change/5;
+			double five = change / 5;
 			System.out.println((int) (five) + " five dollar bill(s)");
 			change = change - (int) five * 5;
 		}
@@ -58,5 +57,6 @@ public class CashRegister {
 			double penny = change / 0.009;
 			System.out.println((int) (penny) + " penny(ies)");
 		}
+		sc.close();
 	}
 }
